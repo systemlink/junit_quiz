@@ -1,6 +1,6 @@
 package hoge.quiz;
 
-import static java.util.Arrays.asList;
+import static java.util.Arrays.*;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,6 +18,7 @@ public class TestQuiz {
 		Assert.assertEquals("金", DateUtils.toDayOfWeekForJapanese(6));
 		Assert.assertEquals("土", DateUtils.toDayOfWeekForJapanese(7));
 		Assert.assertEquals("", DateUtils.toDayOfWeekForJapanese(8));
+		Assert.assertEquals("", DateUtils.toDayOfWeekForJapanese(15));
 	}
 
 	@Test
