@@ -15,9 +15,10 @@ public class DateUtils {
 
 	public static String toDayOfWeekForJapanese(int week){
 
-		if(map.get(week) == null) return map.get(0);
+		String weekName = map.get(week);
+		if(weekName == null) weekName = "";
 
-		return map.get(week);
+		return weekName;
 	}
 
 	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException{
