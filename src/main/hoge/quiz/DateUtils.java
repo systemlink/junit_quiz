@@ -6,7 +6,6 @@ public class DateUtils {
 	public static String toDayOfWeekForJapanese(int week){
 
 		HashMap<Integer,String> hashWeek = new HashMap<Integer,String>();
-
 		{
 			hashWeek.put(0, "");
 			hashWeek.put(1,"日");
