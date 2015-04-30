@@ -4,21 +4,24 @@ import java.util.HashMap;
 
 public class DateUtils {
 
-	public static String toDayOfWeekForJapanese(int week){
+	static HashMap<Integer,String> map = new HashMap<Integer,String>();
+	static String[] array = {"","日","月","火","水","木","金","土"};
 
-		HashMap<String,String> map = new HashMap<String,String>();
-		String[] array = {"","日","月","火","水","木","金","土"};
-
-		map.put("false",array[0]);
-		int i=week % 8;
-		if(week>=0 && week<=8){
-			return array[i];
-		}else{
-			return map.get("false");
+	static{
+		for(int i=0;i<array.length;i++){
+			map.put(i, array[i]);
 		}
 	}
 
+	public static String toDayOfWeekForJapanese(int week){
+
+		if(map.get(week) == null) return map.get(0);
+
+		return map.get(week);
+	}
+
 	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException{
+
 		return null;
 	}
 }
