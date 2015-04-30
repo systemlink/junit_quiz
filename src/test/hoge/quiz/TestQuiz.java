@@ -1,6 +1,6 @@
 package hoge.quiz;
 
-import static java.util.Arrays.asList;
+import static java.util.Arrays.*;
 
 import org.junit.Assert;
 import org.junit.Test;
