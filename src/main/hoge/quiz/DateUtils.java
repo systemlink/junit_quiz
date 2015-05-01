@@ -26,6 +26,11 @@ public class DateUtils {
 	}
 
 	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException{
+
+			if(week < 1 || week > 7 ){
+				throw new IllegalArgumentException("引数に1-7の数字を指定してください。指定値=" + week);
+			}
+
 		String toDayOfWeek = hashWeek.get(week);
 		return toDayOfWeek;
 	}
