@@ -23,6 +23,13 @@ public class DateUtils {
 
 	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException{
 
-		return null;
+		String weekName = map.get(week);
+
+		if(weekName == null || weekName == ""){
+			String msg = "引数に1-7の数字を指定してください。指定値=" + week;
+			throw new IllegalArgumentException(msg);
+		}
+
+		return weekName;
 	}
 }
