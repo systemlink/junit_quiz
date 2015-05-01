@@ -15,15 +15,18 @@ public class DateUtils {
 		hashWeek.put(5,"木");
 		hashWeek.put(6,"金");
 		hashWeek.put(7,"土");
-		hashWeek.put(8,"");
 	}
 
 	public static String toDayOfWeekForJapanese(int week){
+		if(week < 1 || week > 7 ){
+			week = 0;
+		}
 		String toDayOfWeek = hashWeek.get(week);
 		return toDayOfWeek;
 	}
 
 	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException{
-		return null;
+		String toDayOfWeek = hashWeek.get(week);
+		return toDayOfWeek;
 	}
 }
