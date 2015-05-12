@@ -22,10 +22,8 @@ public class ArrayUtils {
 			return false;
 		}
 
-		if(list1.size()  >= list2.size()){
-			if(!list1.contains(list2)){
-				return true;
-			}
+		if(list1.containsAll(list2)){
+			return true;
 		}
 		return false;
 	}
