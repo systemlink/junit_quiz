@@ -8,25 +8,15 @@ public class StringUtils {
 	public static List<String> distinct(List<String> list){
 		List<String> uniqueList = new ArrayList<String>();
 
-		if(list != null){
-			uniqueList.add(list.get(0));
-
-			for(int i=1; i<list.size(); i++){
-				int j;
-
-				for(j=0;j<uniqueList.size(); j++){
-					if(uniqueList.get(j).equals(list.get(i))){
-						break;
-					}
-				}
-				if(j == uniqueList.size()){
+		if(list==null){
+			return list;
+		}else{
+			for(int i=0; i<list.size(); i++){
+				if(!uniqueList.contains(list.get(i))){
 					uniqueList.add(list.get(i));
 				}
 			}
-		}else{
-			uniqueList = list;
 		}
-
 		return uniqueList;
 	}
 }

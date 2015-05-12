@@ -8,14 +8,14 @@ public class DateUtils {
 	static String[] array = {"日","月","火","水","木","金","土"};
 
 	static{
-		for(int i=0;i<array.length;i++){
-			map.put(i, array[i]);
+		for(int i=1;i<=array.length;i++){
+			map.put(i, array[i-1]);
 		}
 	}
 
 	public static String toDayOfWeekForJapanese(int week){
 
-		String weekName = map.get(week - 1);
+		String weekName = map.get(week);
 		if(weekName == null) weekName = "";
 
 		return weekName;
@@ -23,7 +23,7 @@ public class DateUtils {
 
 	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException{
 
-		String weekName = map.get(week - 1);
+		String weekName = map.get(week);
 
 		if(weekName == null){
 			String msg = "引数に1-7の数字を指定してください。指定値=" + week;
