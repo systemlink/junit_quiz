@@ -40,7 +40,10 @@ public class StringUtils {
     }
 
     public static String defaultString(String str, String defaultStr){
-        return null;
+    	if(str == null){
+    		return defaultStr;
+    	}
+        return str;
     }
 
     public static int length(String str){
