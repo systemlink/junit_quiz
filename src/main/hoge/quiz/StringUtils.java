@@ -33,7 +33,10 @@ public class StringUtils {
     }
 
     public static String defaultString(String str){
-        return null;
+    	if(str == null){
+    		return "";
+    	}
+        return str;
     }
 
     public static String defaultString(String str, String defaultStr){
