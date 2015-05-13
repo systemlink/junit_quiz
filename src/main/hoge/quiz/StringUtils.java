@@ -47,7 +47,11 @@ public class StringUtils {
     }
 
     public static int length(String str){
-        return 0;
+    	if(str == null){
+    		return 0;
+    	}
+
+        return str.length();
     }
 
     public static String substring(String str, int start){
