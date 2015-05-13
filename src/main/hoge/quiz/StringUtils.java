@@ -25,8 +25,12 @@ public class StringUtils {
         return false;
     }
 
-    public static boolean indexOf(String str,char searchChar){
-        return false;
+    public static int indexOf(String str,char searchChar){
+    	if(str == null || str.length() == 0){
+    		return -1;
+    	}
+
+        return str.indexOf(searchChar);
     }
 
     public static String defaultString(String str){
@@ -38,7 +42,7 @@ public class StringUtils {
     }
 
     public static int length(String str){
-        return (Integer) null;
+        return 0;
     }
 
     public static String substring(String str, int start){
