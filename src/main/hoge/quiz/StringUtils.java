@@ -25,8 +25,11 @@ public class StringUtils {
 		return false;
     }
 
-    public static boolean indexOf(String str,char searchChar){
-        return true;
+    public static int indexOf(String str,char searchChar){
+    	if(str == null){
+    		return -1;
+    	}
+    	return str.indexOf(searchChar);
     }
 
     public static String defaultString(String str){
