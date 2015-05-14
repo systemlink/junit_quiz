@@ -68,10 +68,32 @@ public class StringUtils {
     }
 
     public static String substring(String str, int start ,int end){
-        return null;
+    	if(str == null){
+    		return null;
+    	}
+    	if(str.equals("") || start > str.length() || start >= end || end <= -str.length()){
+    		return "";
+    	}
+
+    	if(start < 0){
+    		start = str.length() + start > 0 ? str.length() + start : 0;
+    	}
+    	if(end < 0){
+    		end = str.length() + end > 0 ? str.length() + end : 0;
+    	}else if(end > str.length()){
+    		end = str.length();
+    	}
+        return str.substring(start, end);
     }
 
     public static String replace(String text, String searchString, String replacement){
-        return null;
+    	if(text == null){
+    		return null;
+    	}
+    	if(searchString == null || replacement == null){
+    		return text;
+    	}
+
+        return text.replaceAll(searchString, replacement);
     }
 }
