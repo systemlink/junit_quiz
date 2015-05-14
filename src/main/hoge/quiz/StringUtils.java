@@ -74,7 +74,25 @@ public class StringUtils {
     }
 
     public static String substring(String str, int start ,int end){
-        return null;
+       	if(str == null || str == ""){
+    		return str;
+    	}
+
+       	if(end == 0 || str.length() <= start){
+       		return "";
+       	}
+
+	    if(str.length() <  end){
+	    	return str.substring(str.length() - 1);
+	    }
+
+       	if(start < 0){
+       		if(str.length() < - start){
+       			return str.substring(0,end);
+       		}
+       		return str.substring(str.length() + start , str.length() + end);
+       	}
+        return str.substring(start, end);
     }
 
     public static String replace(String text, String searchString, String replacement){
