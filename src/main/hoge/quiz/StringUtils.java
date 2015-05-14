@@ -55,7 +55,22 @@ public class StringUtils {
     }
 
     public static String substring(String str, int start){
-        return null;
+    	if(str == null || str == ""){
+    		return str;
+    	}
+
+    	if(str.length() < start){
+    		return "";
+    	}
+
+    	if(start < 0){
+    		if(str.length() < - start){
+    			return str;
+    		}
+    		return str.substring(str.length() + start);
+    	}
+
+        return str.substring(start);
     }
 
     public static String substring(String str, int start ,int end){
