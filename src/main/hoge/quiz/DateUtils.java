@@ -1,12 +1,35 @@
 package hoge.quiz;
 
+import java.util.HashMap;
+
 public class DateUtils {
-	
-	public static String toDayOfWeekForJapanese(int week){
-		return null;
+
+	static HashMap<Integer,String> map = new HashMap<Integer,String>();
+	static String[] array = {"日","月","火","水","木","金","土"};
+
+	static{
+		for(int i=1;i<=array.length;i++){
+			map.put(i, array[i-1]);
+		}
 	}
-	
+
+	public static String toDayOfWeekForJapanese(int week){
+
+		String weekName = map.get(week);
+		if(weekName == null) weekName = "";
+
+		return weekName;
+	}
+
 	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException{
-		return null;
+
+		String weekName = map.get(week);
+
+		if(weekName == null){
+			String msg = "引数に1-7の数字を指定してください。指定値=" + week;
+			throw new IllegalArgumentException(msg);
+		}
+
+		return weekName;
 	}
 }
