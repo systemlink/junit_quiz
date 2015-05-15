@@ -34,8 +34,9 @@ public class StringUtils {
 	}
 
 	public static String defaultString(String str) {
-		if (str == null)
+		if (str == null) {
 			str = "";
+		}
 		return str;
 	}
 
@@ -75,23 +76,26 @@ public class StringUtils {
 	}
 
 	public static String substring(String str, int start, int end) {
-		if (str == null || str == "") {
-			return str;
+		if (str == null) {
+			return null;
 		}
 
-		if (end == 0 || str.length() <= start) {
+		if (str == "" || start >= end || str.length() <= start
+				|| -end >= str.length()) {
 			return "";
 		}
 
 		if (str.length() < end) {
-			return str.substring(str.length() - 1);
+			end = str.length();
 		}
 
 		if (start < 0) {
 			if (str.length() < -start) {
-				return str.substring(0, end);
+				start = 0;
+			} else {
+				start = str.length() + start;
+				end = str.length() + end;
 			}
-			return str.substring(str.length() + start, str.length() + end);
 		}
 		return str.substring(start, end);
 	}
