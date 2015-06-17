@@ -8,18 +8,34 @@ public class TestQuiz2 {
     @Test
     public void test6() {
         // StringUtils.isBlank()
-        Assert.assertEquals(true, StringUtils.isBlank(null));
-        Assert.assertEquals(true, StringUtils.isBlank(""));
-        Assert.assertEquals(false, StringUtils.isBlank("bob"));
+    	Assert.assertEquals(true, StringUtils.isBlank(null));
+    	Assert.assertEquals(true, StringUtils.isBlank(""));
+    	Assert.assertEquals(true, StringUtils.isBlank(" "));    //半角スペース
+    	Assert.assertEquals(false, StringUtils.isBlank(" abc "));
+    	Assert.assertEquals(true, StringUtils.isBlank("　"));   //全角スペース
+    	Assert.assertEquals(false, StringUtils.isBlank("abc"));
+    	/*
+	        Assert.assertEquals(true, StringUtils.isBlank(null));
+	        Assert.assertEquals(true, StringUtils.isBlank(""));
+	        Assert.assertEquals(false, StringUtils.isBlank("bob"));
+        */
     }
 
     @Test
     public void test7() {
         // StringUtils.indexOf()
-        Assert.assertEquals(-1, StringUtils.indexOf(null, 'a'));
-        Assert.assertEquals(-1, StringUtils.indexOf("", 'b'));
-        Assert.assertEquals(0, StringUtils.indexOf("aabaabaa", 'a'));
-        Assert.assertEquals(2, StringUtils.indexOf("aabaabaa", 'b'));
+    	Assert.assertEquals(-1, StringUtils.indexOf(null, 'a'));
+    	Assert.assertEquals(-1, StringUtils.indexOf("", 'a'));
+    	Assert.assertEquals(0, StringUtils.indexOf("aabaabaa", 'a'));
+    	Assert.assertEquals(2, StringUtils.indexOf("aabaabaa", 'b'));
+    	Assert.assertEquals(-1, StringUtils.indexOf("aabaabaa", 'c'));
+
+    	/*
+	        Assert.assertEquals(-1, StringUtils.indexOf(null, 'a'));
+	        Assert.assertEquals(-1, StringUtils.indexOf("", 'b'));
+	        Assert.assertEquals(0, StringUtils.indexOf("aabaabaa", 'a'));
+	        Assert.assertEquals(2, StringUtils.indexOf("aabaabaa", 'b'));
+        */
     }
 
     @Test

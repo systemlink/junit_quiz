@@ -19,7 +19,7 @@ public class StringUtils {
 	}
 
 	public static boolean isBlank(String str) {
-		if (str == null || str.length() == 0) {
+		if (str == null || str.length() == 0 || str == " " || str == "　") {
 			return true;
 		}
 		return false;
