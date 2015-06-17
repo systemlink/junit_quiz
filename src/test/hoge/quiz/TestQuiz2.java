@@ -75,13 +75,23 @@ public class TestQuiz2 {
     @Test
     public void test11() {
         // StringUtils.substring()
-        Assert.assertEquals(null, StringUtils.substring(null, 0));
-        Assert.assertEquals("", StringUtils.substring("", 0));
+        Assert.assertEquals(null, StringUtils.substring(null, 5));
+        Assert.assertEquals("", StringUtils.substring("", 5));
         Assert.assertEquals("abc", StringUtils.substring("abc", 0));
-        Assert.assertEquals("c", StringUtils.substring("abc", 2));
-        Assert.assertEquals("", StringUtils.substring("abc", 4));
-        Assert.assertEquals("bc", StringUtils.substring("abc", -2));
+        Assert.assertEquals("bc", StringUtils.substring("abc", 1));
+        Assert.assertEquals("", StringUtils.substring("abc", 3));
+        Assert.assertEquals("c", StringUtils.substring("abc", -1) );
+        Assert.assertEquals("abc", StringUtils.substring("abc", -3));
         Assert.assertEquals("abc", StringUtils.substring("abc", -4));
+    	/*
+	        Assert.assertEquals(null, StringUtils.substring(null, 0));
+	        Assert.assertEquals("", StringUtils.substring("", 0));
+	        Assert.assertEquals("abc", StringUtils.substring("abc", 0));
+	        Assert.assertEquals("c", StringUtils.substring("abc", 2));
+	        Assert.assertEquals("", StringUtils.substring("abc", 4));
+	        Assert.assertEquals("bc", StringUtils.substring("abc", -2));
+	        Assert.assertEquals("abc", StringUtils.substring("abc", -4));
+        */
     }
 
     @Test
