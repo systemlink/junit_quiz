@@ -1,5 +1,6 @@
 package hoge.quiz;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -29,7 +30,6 @@ public class TestQuiz2 {
     	Assert.assertEquals(0, StringUtils.indexOf("aabaabaa", 'a'));
     	Assert.assertEquals(2, StringUtils.indexOf("aabaabaa", 'b'));
     	Assert.assertEquals(-1, StringUtils.indexOf("aabaabaa", 'c'));
-
     	/*
 	        Assert.assertEquals(-1, StringUtils.indexOf(null, 'a'));
 	        Assert.assertEquals(-1, StringUtils.indexOf("", 'b'));
@@ -41,9 +41,14 @@ public class TestQuiz2 {
     @Test
     public void test8() {
         // StringUtils.defaultString()
-        Assert.assertEquals("", StringUtils.defaultString(null));
-        Assert.assertEquals("", StringUtils.defaultString(""));
-        Assert.assertEquals("bat", StringUtils.defaultString("bat"));
+    	Assert.assertEquals("", StringUtils.defaultString(null));
+    	Assert.assertEquals("", StringUtils.defaultString(""));
+    	Assert.assertEquals("abc", StringUtils.defaultString("abc"));
+    	/*
+	        Assert.assertEquals("", StringUtils.defaultString(null));
+	        Assert.assertEquals("", StringUtils.defaultString(""));
+	        Assert.assertEquals("bat", StringUtils.defaultString("bat"));
+        */
     }
 
     @Test
@@ -52,6 +57,11 @@ public class TestQuiz2 {
         Assert.assertEquals("NULL", StringUtils.defaultString(null, "NULL"));
         Assert.assertEquals("", StringUtils.defaultString("", "NULL"));
         Assert.assertEquals("bat", StringUtils.defaultString("bat", "NULL"));
+    	/*
+	        Assert.assertEquals("NULL", StringUtils.defaultString(null, "NULL"));
+	        Assert.assertEquals("", StringUtils.defaultString("", "NULL"));
+	        Assert.assertEquals("bat", StringUtils.defaultString("bat", "NULL"));
+        */
     }
 
     @Test
