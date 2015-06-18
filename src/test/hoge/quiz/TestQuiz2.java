@@ -95,7 +95,7 @@ public class TestQuiz2 {
 
     @Test
     public void test12() {
-        // StringUtils.substring()
+    	// StringUtils.substring()
     	Assert.assertEquals(null,StringUtils.substring(null, 0, 0));
     	Assert.assertEquals("", StringUtils.substring("", 0, 0));
     	Assert.assertEquals("", StringUtils.substring("abc", 0, 0));
@@ -107,7 +107,7 @@ public class TestQuiz2 {
     	Assert.assertEquals("", StringUtils.substring("abc", 2, 1));
     	Assert.assertEquals("ab", StringUtils.substring("abc", -3, -1));
     	Assert.assertEquals("ab", StringUtils.substring("abc", -5, -1));
-       	Assert.assertEquals("", StringUtils.substring("abc", -3, -5));
+    	Assert.assertEquals("", StringUtils.substring("abc", -3, -5));
     	Assert.assertEquals("bc", StringUtils.substring("abc", -2, 3));
     	Assert.assertEquals("", StringUtils.substring("abc", -2, 1));
     	/*
@@ -125,12 +125,23 @@ public class TestQuiz2 {
 
     @Test
     public void test13() {
-        // StringUtils.replace()
-        Assert.assertEquals(null, StringUtils.replace(null, "", ""));
-        Assert.assertEquals("", StringUtils.replace("", "", ""));
-        Assert.assertEquals("aba", StringUtils.replace("aba", "a", null));
-        Assert.assertEquals("b", StringUtils.replace("aba", "a", ""));
-        Assert.assertEquals("zbz", StringUtils.replace("aba", "a", "z"));
+    	// StringUtils.replace()
+    	Assert.assertEquals(null, StringUtils.replace(null, "", ""));
+    	Assert.assertEquals("", StringUtils.replace("", "", "a"));
+    	Assert.assertEquals("aba", StringUtils.replace("aba", "a", null));
+    	Assert.assertEquals("aba", StringUtils.replace("aba", null, "a"));
+    	Assert.assertEquals("aba", StringUtils.replace("aba", "c", ""));
+    	Assert.assertEquals("b", StringUtils.replace("aba", "a", ""));
+    	Assert.assertEquals("zbz", StringUtils.replace("aba", "a", "z"));
+    	Assert.assertEquals("zzbzz", StringUtils.replace("aba", "a", "zz"));
+    	Assert.assertEquals("za", StringUtils.replace("aba", "ab", "z"));
+        /*
+	        Assert.assertEquals(null, StringUtils.replace(null, "", ""));
+	        Assert.assertEquals("", StringUtils.replace("", "", ""));
+	        Assert.assertEquals("aba", StringUtils.replace("aba", "a", null));
+	        Assert.assertEquals("b", StringUtils.replace("aba", "a", ""));
+	        Assert.assertEquals("zbz", StringUtils.replace("aba", "a", "z"));
+        */
     }
 
 }

@@ -108,6 +108,15 @@ public class StringUtils {
 
 	public static String replace(String text, String searchString,
 			String replacement) {
-		return null;
+		if(text == null){
+			return null;
+		}
+		if(text == ""){
+			return "";
+		}
+		if(searchString == null || replacement == null){
+			return text;
+		}
+		return text.replace(searchString, replacement);
 	}
 }
