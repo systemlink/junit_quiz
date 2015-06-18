@@ -144,4 +144,13 @@ public class TestQuiz2 {
         */
     }
 
+    @Test
+    public void test14() {
+    	// StringUtils.isEmpty()
+    	Assert.assertEquals(true, StringUtils.isEmpty(null));
+    	Assert.assertEquals(true, StringUtils.isEmpty(""));
+    	Assert.assertEquals(false, StringUtils.isEmpty(" "));
+    	Assert.assertEquals(false, StringUtils.isEmpty("abc"));
+    	Assert.assertEquals(false, StringUtils.isEmpty(" abc "));
+    }
 }

@@ -119,4 +119,11 @@ public class StringUtils {
 		}
 		return text.replace(searchString, replacement);
 	}
+
+	public static boolean isEmpty(String str) {
+		if (str == null || str.length() == 0) {
+			return true;
+		}
+		return false;
+	}
 }
