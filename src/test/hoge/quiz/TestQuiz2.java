@@ -1,6 +1,5 @@
 package hoge.quiz;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -97,15 +96,31 @@ public class TestQuiz2 {
     @Test
     public void test12() {
         // StringUtils.substring()
-        Assert.assertEquals(null, StringUtils.substring(null, 0, 0));
-        Assert.assertEquals("", StringUtils.substring("", 0 ,  0));
-        Assert.assertEquals("ab", StringUtils.substring("abc", 0, 2));
-        Assert.assertEquals("", StringUtils.substring("abc", 2, 0));
-        Assert.assertEquals("c", StringUtils.substring("abc", 2, 4));
-        Assert.assertEquals("", StringUtils.substring("abc", 4, 6));
-        Assert.assertEquals("", StringUtils.substring("abc", 2, 2));
-        Assert.assertEquals("b", StringUtils.substring("abc", -2, -1));
-        Assert.assertEquals("ab", StringUtils.substring("abc", -4, 2));
+    	Assert.assertEquals(null,StringUtils.substring(null, 0, 0));
+    	Assert.assertEquals("", StringUtils.substring("", 0, 0));
+    	Assert.assertEquals("", StringUtils.substring("abc", 0, 0));
+    	Assert.assertEquals("ab", StringUtils.substring("abc", 0, 2));
+    	Assert.assertEquals("b", StringUtils.substring("abc", 1, 2));
+    	Assert.assertEquals("abc", StringUtils.substring("abc", 0, 5));
+    	Assert.assertEquals("bc", StringUtils.substring("abc", 1, 5));
+    	Assert.assertEquals("", StringUtils.substring("abc", 5, 1));
+    	Assert.assertEquals("", StringUtils.substring("abc", 2, 1));
+    	Assert.assertEquals("ab", StringUtils.substring("abc", -3, -1));
+    	Assert.assertEquals("ab", StringUtils.substring("abc", -5, -1));
+       	Assert.assertEquals("", StringUtils.substring("abc", -3, -5));
+    	Assert.assertEquals("bc", StringUtils.substring("abc", -2, 3));
+    	Assert.assertEquals("", StringUtils.substring("abc", -2, 1));
+    	/*
+	        Assert.assertEquals(null, StringUtils.substring(null, 0, 0));
+	        Assert.assertEquals("", StringUtils.substring("", 0 ,  0));
+	        Assert.assertEquals("ab", StringUtils.substring("abc", 0, 2));
+	        Assert.assertEquals("", StringUtils.substring("abc", 2, 0));
+	        Assert.assertEquals("c", StringUtils.substring("abc", 2, 4));
+	        Assert.assertEquals("", StringUtils.substring("abc", 4, 6));
+	        Assert.assertEquals("", StringUtils.substring("abc", 2, 2));
+	        Assert.assertEquals("b", StringUtils.substring("abc", -2, -1));
+	        Assert.assertEquals("ab", StringUtils.substring("abc", -4, 2));
+        */
     }
 
     @Test

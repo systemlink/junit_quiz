@@ -89,12 +89,18 @@ public class StringUtils {
 			end = str.length();
 		}
 
+		if (end < 0) {
+			if (str.length() + end < 0) {
+				end = 0;
+			} else {
+				end = str.length() + end;
+			}
+		}
 		if (start < 0) {
-			if (str.length() < -start) {
+			if (str.length() + start < 0) {
 				start = 0;
 			} else {
 				start = str.length() + start;
-				end = str.length() + end;
 			}
 		}
 		return str.substring(start, end);
