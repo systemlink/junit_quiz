@@ -3,6 +3,7 @@ package hoge.quiz;
 public class DateUtils {
 	
 	public static String toDayOfWeekForJapanese(int week){
+		// テストコミット
 		return null;
 	}
 	
