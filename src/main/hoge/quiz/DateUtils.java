@@ -30,31 +30,13 @@ public class DateUtils {
 
 	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException {
 		String week_s;
-		switch (week) {
-		case 1:
-			week_s = "日";
-			break;
-		case 2:
-			week_s = "月";
-			break;
-		case 3:
-			week_s = "火";
-			break;
-		case 4:
-			week_s = "水";
-			break;
-		case 5:
-			week_s = "木";
-			break;
-		case 6:
-			week_s = "金";
-			break;
-		case 7:
-			week_s = "土";
-			break;
-		default :
+		
+		if(week_map.containsKey(week)) {
+			week_s = week_map.get(week);
+		} else {
 			throw new IllegalArgumentException("引数に1-7の数字を指定してください。指定値=" + week);
 		}
+		
 		return week_s;
 	}
 }
