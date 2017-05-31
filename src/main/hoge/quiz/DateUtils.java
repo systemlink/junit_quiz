@@ -14,10 +14,11 @@ public class DateUtils {
 			put(7, "土");
 		}
 	};
+
 	public static String toDayOfWeekForJapanese(int week) {
 		// テストコミット
 		String week_d;
-		
+
 		if (map.containsKey(week)) {
 			week_d = map.get(week);
 		} else {
@@ -28,13 +29,11 @@ public class DateUtils {
 
 	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException {
 		String week_d;
-		
+
 		if (map.containsKey(week)) {
 			week_d = map.get(week);
-		} else if(week == 8) {
-			throw new IllegalArgumentException("引数に1-7の数字を指定してください。指定値=8");
 		} else {
-			week_d = "";
+			throw new IllegalArgumentException("引数に1-7の数字を指定してください。指定値="+ week);
 		}
 		return week_d;
 	}
