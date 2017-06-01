@@ -1,14 +1,16 @@
 package hoge.quiz;
 
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class StringUtils {
 	public static List<String> distinct(List<String> list){
 		if(list == null) {
 			return null;
 		} else {
-			List<String> lists = list.stream().distinct().collect(Collectors.toList());
+			LinkedHashSet<String> set = new LinkedHashSet<>(list);
+			List<String> lists = new ArrayList<>(set);
 			return lists;
 		}
 	}
