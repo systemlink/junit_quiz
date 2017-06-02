@@ -20,10 +20,7 @@ public class ArrayUtils {
 
 		if (list1 == null || list2 == null) { 
 			return false;
-		} else if(list1.contains(list2) || list1.size() < list2.size()){
-			return false;
-		} else {
-			return true;
-		}
+		} 
+			return list1.containsAll(list2);
 	}
 }
