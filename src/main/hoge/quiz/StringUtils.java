@@ -14,4 +14,45 @@ public class StringUtils {
 			return lists;
 		}
 	}
+	
+	public static boolean isBlank(String str){
+        boolean result = false;
+        if(str == null || str.isEmpty()) {
+        	result = true;
+        }
+        
+		return result;
+    }
+    
+    public static int indexOf(String str,char searchChar){
+    	if(str == null) {
+    		return -1;
+    	}
+    	
+        return str.indexOf(searchChar);
+    }
+
+    public static String defaultString(String str){
+        return null;
+    }
+
+    public static String defaultString(String str, String defaultStr){
+        return null;
+    }
+
+    public static int length(String str){
+        return null;
+    }
+
+    public static String substring(String str, int start){
+        return null;
+    }
+
+    public static String substring(String str, int start ,int end){
+        return null;
+    }
+
+    public static String replace(String text, String searchString, String replacement){
+        return null;
+    }
 }
