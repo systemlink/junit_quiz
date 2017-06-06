@@ -18,7 +18,7 @@ public class StringUtils {
 	}
 
 	public static boolean isBlank(String str) {
-		if (str == null || str.isEmpty() || str == " ") {
+		if (str == null || str.isEmpty() || str.trim().length() == 0) {
 			return true;
 		}
 		return false;
@@ -28,17 +28,22 @@ public class StringUtils {
 
 		if (str == null) {
 			return -1;
-		} else {
-			return str.indexOf(searchChar);
 		}
+		return str.indexOf(searchChar);
 	}
 
 	public static String defaultString(String str) {
-		return null;
+		if (str == null) {
+			return "";
+		}
+		return str;
 	}
 
 	public static String defaultString(String str, String defaultStr) {
-		return null;
+		if (str == null) {
+			return defaultStr;
+		}
+		return str;
 	}
 
 	public static int length(String str) {
@@ -56,5 +61,4 @@ public class StringUtils {
 	public static String replace(String text, String searchString, String replacement) {
 		return null;
 	}
-
 }
