@@ -13,6 +13,10 @@ public class TestQuiz2 {
         Assert.assertEquals(true, StringUtils.isBlank(null));
         Assert.assertEquals(true, StringUtils.isBlank(""));
         Assert.assertEquals(false, StringUtils.isBlank("bob"));
+        Assert.assertEquals(true, StringUtils.isBlank(" "));
+        Assert.assertEquals(false, StringUtils.isBlank(" bob "));
+        Assert.assertEquals(true, StringUtils.isBlank("　"));
+        Assert.assertEquals(false, StringUtils.isBlank("　bob　"));
     }
 
     @Test
