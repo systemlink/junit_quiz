@@ -18,7 +18,7 @@ public class StringUtils {
 	}
 
 	public static boolean isBlank(String str) {
-		if (str == null || str.isEmpty() || str.trim().length() == 0) {
+		if (str == null || str.isEmpty() || str.replaceAll("　", " ").trim().length() == 0) {
 			return true;
 		}
 		return false;
@@ -47,12 +47,28 @@ public class StringUtils {
 	}
 
 	public static int length(String str) {
-		return null;
+		if(str == null) {
+			return 0;
+		}
+			return str.length();
 	}
 
 	public static String substring(String str, int start) {
-		return null;
+		if (start < 0) {
+			if (str.length() < (-start)) {
+				start = 0;
+			} else {
+				start = str.length() + (start);
+			}
+		}
+		if (str == null) {
+			return null;
+		} else if (str.length() < start) {
+			return "";
+		}
+		return str.substring(start);
 	}
+
 
 	public static String substring(String str, int start, int end) {
 		return null;
