@@ -16,11 +16,10 @@ public class StringUtils {
 	}
 
 	public static boolean isBlank(String str) {
-		boolean result = false;
-		if (str == null || str.replaceAll("　", " ").trim().isEmpty()) {
-			result = true;
+		if (str == null) {
+			return true;
 		}
-		return result;
+		return str.replaceAll("　", " ").trim().isEmpty();
 	}
 
 	public static int indexOf(String str, char searchChar) {
@@ -45,11 +44,24 @@ public class StringUtils {
 	}
 
 	public static int length(String str) {
-		return null;
+		if(str == null) {
+    		return 0;
+    	}
+        return str.length();
 	}
 
 	public static String substring(String str, int start) {
-		return null;
+		if (str == null) {
+			return null;
+		} else if (str.length() < start) {
+			return "";
+		} else if (start < 0) {
+			start += str.length();
+			if (start < 0) {
+				start = 0;
+			}
+		}
+		return str.substring(start);
 	}
 
 	public static String substring(String str, int start, int end) {
