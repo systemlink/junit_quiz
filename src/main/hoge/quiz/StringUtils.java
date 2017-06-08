@@ -51,8 +51,8 @@ public class StringUtils {
 	}
 
 	public static String substring(String str, int start) {
-		if (str == null) {
-			return null;
+		if (str == null || str.isEmpty()) {
+			return str;
 		} else if (str.length() < start) {
 			return "";
 		} else if (start < 0) {
@@ -65,7 +65,26 @@ public class StringUtils {
 	}
 
 	public static String substring(String str, int start, int end) {
-		return null;
+		if (str == null || str.isEmpty()) {
+			return str;
+		} else if (str.length() <= start || start >= end) {
+			return "";
+		} else if (str.length() < end) {
+			end = str.length();
+		}
+		if (start < 0) {
+			start += str.length();
+			if (start < 0) {
+				start = 0;
+			}
+		}
+		if (end < 0) {
+			end += str.length();
+			if (end <= 0) {
+				return "";
+			}
+		}
+		return str.substring(start, end);
 	}
 
 	public static String replace(String text, String searchString, String replacement) {
