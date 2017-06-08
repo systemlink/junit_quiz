@@ -47,13 +47,16 @@ public class StringUtils {
 	}
 
 	public static int length(String str) {
-		if(str == null) {
+		if (str == null) {
 			return 0;
 		}
-			return str.length();
+		return str.length();
 	}
 
 	public static String substring(String str, int start) {
+		if (str == null || str.isEmpty()) {
+			return str;
+		}
 		if (start < 0) {
 			if (str.length() < (-start)) {
 				start = 0;
@@ -61,20 +64,43 @@ public class StringUtils {
 				start = str.length() + (start);
 			}
 		}
-		if (str == null) {
-			return null;
-		} else if (str.length() < start) {
+		if (str.length() < start) {
 			return "";
 		}
 		return str.substring(start);
 	}
 
-
 	public static String substring(String str, int start, int end) {
-		return null;
+		if (str == null || str.isEmpty()) {
+			return str;
+		}
+		if (start < 0) {
+			if (str.length() < (-start)) {
+				start = 0;
+			} else {
+				start = str.length() + (start);
+			}
+		}
+		if (end < 0) {
+			if (str.length() < (-end)) {
+				end = 0;
+			} else {
+				end = str.length() + (end);
+			}
+		}
+
+		if (str.length() < start || start >= end) {
+			return "";
+		} else if (str.length() < end) {
+			end = str.length();
+		}
+		return str.substring(start, end);
 	}
 
 	public static String replace(String text, String searchString, String replacement) {
-		return null;
+		if (text == null || searchString == null || replacement == null) {
+			return text;
+		}
+		return text.replace(searchString, replacement);
 	}
 }
