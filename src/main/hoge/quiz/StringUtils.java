@@ -82,11 +82,7 @@ public class StringUtils {
 			}
 		}
 		if (end < 0) {
-			if (str.length() < (-end)) {
-				end = 0;
-			} else {
-				end = str.length() + (end);
-			}
+			end = str.length() + end;
 		}
 
 		if (str.length() < start || start >= end) {
