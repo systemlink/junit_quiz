@@ -32,6 +32,8 @@ public class TestQuiz {
 		Assert.assertEquals("土", DateUtils.toDayOfWeekForJapaneseThrowsException(7));
 		try {
 			DateUtils.toDayOfWeekForJapaneseThrowsException(8);
+			DateUtils.toDayOfWeekForJapaneseThrowsException(0);
+			DateUtils.toDayOfWeekForJapaneseThrowsException(9);
 			Assert.fail();
 		} catch (IllegalArgumentException e) {
 			Assert.assertEquals("引数に1-7の数字を指定してください。指定値=8", e.getMessage());
