@@ -76,6 +76,7 @@ public class TestQuiz2 {
         Assert.assertEquals("", StringUtils.substring("abc", 2, 2));
         Assert.assertEquals("b", StringUtils.substring("abc", -2, -1));
         Assert.assertEquals("ab", StringUtils.substring("abc", -4, 2));
+        Assert.assertEquals("", StringUtils.substring("abc", -1, 1));
     }
 
     @Test

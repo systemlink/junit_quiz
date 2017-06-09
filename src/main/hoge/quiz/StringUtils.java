@@ -53,7 +53,9 @@ public class StringUtils {
 	public static String substring(String str, int start) {
 		if (str == null || str.isEmpty()) {
 			return str;
-		} else if (str.length() < start) {
+		}
+		
+		if (str.length() < start) {
 			return "";
 		} else if (start < 0) {
 			start += str.length();
@@ -67,11 +69,14 @@ public class StringUtils {
 	public static String substring(String str, int start, int end) {
 		if (str == null || str.isEmpty()) {
 			return str;
-		} else if (str.length() <= start || start >= end) {
+		}
+		
+		if (str.length() <= start || start >= end || (end < 0 && str.length() < Math.abs(end))) {
 			return "";
 		} else if (str.length() < end) {
 			end = str.length();
 		}
+		
 		if (start < 0) {
 			start += str.length();
 			if (start < 0) {
@@ -80,14 +85,21 @@ public class StringUtils {
 		}
 		if (end < 0) {
 			end += str.length();
-			if (end <= 0) {
-				return "";
-			}
+		}
+		if (start >= end) {
+			return "";
 		}
 		return str.substring(start, end);
 	}
 
 	public static String replace(String text, String searchString, String replacement) {
-		return null;
+		if (text == null || text.isEmpty() || replacement == null) {
+			return text;
+		}
+		
+		if (searchString.isEmpty()) {
+			return "";
+		}
+		return text.replace(searchString, replacement);
 	}
 }
