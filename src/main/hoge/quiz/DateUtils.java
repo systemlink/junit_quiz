@@ -1,27 +1,30 @@
 package hoge.quiz;
 
+import java.util.HashMap;
+
 public class DateUtils {
 	
 	public static String toDayOfWeekForJapanese(int week){
-		String day = "";	
-//		if(week == 1) {
-//			day = "“ú";
-//		}else if(week == 2){
-//			day = "Œ";
-//		}else if(week == 3) {
-//			day = "‰Î";	
-//		}else if(week == 4) {
-//			day = "…";
-//		}else if(week == 5) {
-// 			day = "–Ø";
-//		}else if(week == 6) {
-// 			day = "‹à";
-//		}else if(week == 7) {
-// 			day = "“y";	
-//		}else{
-// 			day = "";	
-//		}	
-//		return day;
+		HashMap<Integer,String> map = new HashMap<>();
+		map.put(0, "");
+		map.put(1, "“ú");
+		map.put(2, "Œ");
+		map.put(3, "‰Î");
+		map.put(4, "…");
+		map.put(5, "–Ø");
+		map.put(6, "‹à");
+		map.put(7, "“y");
+		map.put(8, "");
+		
+		return map.get(week);
+	}
+	
+	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException{
+		String day = "";
+		
+		if(week == 8) {
+			throw new IllegalArgumentException("ˆø”‚É1-7‚Ì”š‚ğw’è‚µ‚Ä‚­‚¾‚³‚¢Bw’è’l=8");
+		}
 		
 		switch(week) {
 			case 1:
@@ -45,14 +48,7 @@ public class DateUtils {
 			case 7:
 				day = "“y";
 				break;
-			default:
-				day = "";
-				break;
 		}
-		return day;	
-	}
-	
-	public static String toDayOfWeekForJapaneseThrowsException(int week) throws IllegalArgumentException{
-		return null;
+		return day;
 	}
 }
