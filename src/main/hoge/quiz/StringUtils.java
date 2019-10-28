@@ -21,16 +21,11 @@ public class StringUtils {
 		}
 		List<String> strList = Arrays.asList(str.split(""));
 		if(Collections.frequency(strList,strList.get(0)) == strList.size()) {
-			if(strList.get(0) == " " || strList.get(0) == "@") {
-				return true;
+			if(strList.get(0).equals(" ") || strList.get(0).equals("@")){
+			return true;
 			}
 		}
 		return false;
-		
-//		if(org.apache.commons.lang3.StringUtils.isBlank(str)) {
-//			return true;
-//		}
-//		return false;
 	}
 
 	public static int indexOf(String str, char searchChar) {
@@ -99,9 +94,50 @@ public class StringUtils {
 		
 		return str = String.join("", strList);
 	}
-
+	
 	public static String substring(String str, int start, int end) {
-		return "d";
+		if(str == null) {
+			return null;
+		}else if(str == "" || start > end || str.length() + start == end || start == 0 & end == 0) {
+			return "";
+		}
+		
+		if(end > str.length()) {
+			end = str.length();
+		}
+		
+		String[] strArray = str.split("");
+		List<String> strList = new ArrayList<String>();
+		if(start < 0) {
+			if(end < 0 ) {
+				if(str.length() + start < 0) {
+					start = 0;
+					for(int i = start;i < str.length() + end;i++) {
+						strList.add(strArray[i]);
+					}
+				}else {
+					for(int i = str.length() + start;i < str.length() + end;i++) {
+						strList.add(strArray[i]);
+					}
+				}
+			}else{
+				if(str.length() + start < 0) {
+					start = 0;
+					for(int i = start;i < end;i++) {	
+						strList.add(strArray[i]);
+					}
+				}else{
+					for(int i = str.length() + start;i < end;i++) {	
+						strList.add(strArray[i]);
+					}
+				}
+			}
+		}else {
+			for(int i = start;i < end;i++) {
+				strList.add(strArray[i]);
+			}
+		}
+		return str = String.join("", strList);
 	}
 
 	public static String replace(String text, String searchString,

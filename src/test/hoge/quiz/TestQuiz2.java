@@ -14,11 +14,11 @@ public class TestQuiz2 {
     	Assert.assertEquals(false, StringUtils.isBlank(" abc "));
     	Assert.assertEquals(true, StringUtils.isBlank("　"));   //全角スペース
     	Assert.assertEquals(false, StringUtils.isBlank("abc"));
-    	/*
+    	
 	        Assert.assertEquals(true, StringUtils.isBlank(null));
 	        Assert.assertEquals(true, StringUtils.isBlank(""));
 	        Assert.assertEquals(false, StringUtils.isBlank("bob"));
-        */
+        
     }
 
     @Test
@@ -29,12 +29,12 @@ public class TestQuiz2 {
     	Assert.assertEquals(0, StringUtils.indexOf("aabaabaa", 'a'));
     	Assert.assertEquals(2, StringUtils.indexOf("aabaabaa", 'b'));
     	Assert.assertEquals(-1, StringUtils.indexOf("aabaabaa", 'c'));
-    	/*
+    	
 	        Assert.assertEquals(-1, StringUtils.indexOf(null, 'a'));
 	        Assert.assertEquals(-1, StringUtils.indexOf("", 'b'));
 	        Assert.assertEquals(0, StringUtils.indexOf("aabaabaa", 'a'));
 	        Assert.assertEquals(2, StringUtils.indexOf("aabaabaa", 'b'));
-        */
+        
     }
 
     @Test
@@ -43,11 +43,11 @@ public class TestQuiz2 {
     	Assert.assertEquals("", StringUtils.defaultString(null));
     	Assert.assertEquals("", StringUtils.defaultString(""));
     	Assert.assertEquals("abc", StringUtils.defaultString("abc"));
-    	/*
+    	
 	        Assert.assertEquals("", StringUtils.defaultString(null));
 	        Assert.assertEquals("", StringUtils.defaultString(""));
 	        Assert.assertEquals("bat", StringUtils.defaultString("bat"));
-        */
+        
     }
 
     @Test
@@ -56,11 +56,11 @@ public class TestQuiz2 {
         Assert.assertEquals("NULL", StringUtils.defaultString(null, "NULL"));
         Assert.assertEquals("", StringUtils.defaultString("", "NULL"));
         Assert.assertEquals("bat", StringUtils.defaultString("bat", "NULL"));
-    	/*
+    	
 	        Assert.assertEquals("NULL", StringUtils.defaultString(null, "NULL"));
 	        Assert.assertEquals("", StringUtils.defaultString("", "NULL"));
 	        Assert.assertEquals("bat", StringUtils.defaultString("bat", "NULL"));
-        */
+        
     }
 
     @Test
@@ -82,7 +82,7 @@ public class TestQuiz2 {
         Assert.assertEquals("c", StringUtils.substring("abc", -1) );
         Assert.assertEquals("abc", StringUtils.substring("abc", -3));
         Assert.assertEquals("abc", StringUtils.substring("abc", -4));
-    	/*
+    	
 	        Assert.assertEquals(null, StringUtils.substring(null, 0));
 	        Assert.assertEquals("", StringUtils.substring("", 0));
 	        Assert.assertEquals("abc", StringUtils.substring("abc", 0));
@@ -90,7 +90,7 @@ public class TestQuiz2 {
 	        Assert.assertEquals("", StringUtils.substring("abc", 4));
 	        Assert.assertEquals("bc", StringUtils.substring("abc", -2));
 	        Assert.assertEquals("abc", StringUtils.substring("abc", -4));
-        */
+        
     }
 
     @Test
@@ -110,7 +110,7 @@ public class TestQuiz2 {
     	Assert.assertEquals("", StringUtils.substring("abc", -3, -5));
     	Assert.assertEquals("bc", StringUtils.substring("abc", -2, 3));
     	Assert.assertEquals("", StringUtils.substring("abc", -2, 1));
-    	/*
+    	
 	        Assert.assertEquals(null, StringUtils.substring(null, 0, 0));
 	        Assert.assertEquals("", StringUtils.substring("", 0 ,  0));
 	        Assert.assertEquals("ab", StringUtils.substring("abc", 0, 2));
@@ -120,7 +120,7 @@ public class TestQuiz2 {
 	        Assert.assertEquals("", StringUtils.substring("abc", 2, 2));
 	        Assert.assertEquals("b", StringUtils.substring("abc", -2, -1));
 	        Assert.assertEquals("ab", StringUtils.substring("abc", -4, 2));
-        */
+        
     }
 
     @Test
