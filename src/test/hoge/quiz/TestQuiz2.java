@@ -82,7 +82,7 @@ public class TestQuiz2 {
         Assert.assertEquals("c", StringUtils.substring("abc", -1) );
         Assert.assertEquals("abc", StringUtils.substring("abc", -3));
         Assert.assertEquals("abc", StringUtils.substring("abc", -4));
-    	
+    	/*
 	        Assert.assertEquals(null, StringUtils.substring(null, 0));
 	        Assert.assertEquals("", StringUtils.substring("", 0));
 	        Assert.assertEquals("abc", StringUtils.substring("abc", 0));
@@ -90,7 +90,7 @@ public class TestQuiz2 {
 	        Assert.assertEquals("", StringUtils.substring("abc", 4));
 	        Assert.assertEquals("bc", StringUtils.substring("abc", -2));
 	        Assert.assertEquals("abc", StringUtils.substring("abc", -4));
-        
+        */
     }
 
     @Test
@@ -110,7 +110,7 @@ public class TestQuiz2 {
     	Assert.assertEquals("", StringUtils.substring("abc", -3, -5));
     	Assert.assertEquals("bc", StringUtils.substring("abc", -2, 3));
     	Assert.assertEquals("", StringUtils.substring("abc", -2, 1));
-    	
+    	/*
 	        Assert.assertEquals(null, StringUtils.substring(null, 0, 0));
 	        Assert.assertEquals("", StringUtils.substring("", 0 ,  0));
 	        Assert.assertEquals("ab", StringUtils.substring("abc", 0, 2));
@@ -120,7 +120,7 @@ public class TestQuiz2 {
 	        Assert.assertEquals("", StringUtils.substring("abc", 2, 2));
 	        Assert.assertEquals("b", StringUtils.substring("abc", -2, -1));
 	        Assert.assertEquals("ab", StringUtils.substring("abc", -4, 2));
-        
+        */
     }
 
     @Test
