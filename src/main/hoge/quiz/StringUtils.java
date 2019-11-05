@@ -73,28 +73,22 @@ public class StringUtils {
 		if(str == null) {
 			return null;
 		}
-		if(str == "" || str.length() <= start) {
-			return "";
-		}
 	
 		String[] strArray = str.split("");
-		List<String> strList = new ArrayList<String>();
+		StringBuilder sb = new StringBuilder();
 		
 		//start引数が(-)の場合の標準化
 		if(start < 0) {
 			start = str.length() + start;
-			if(start < 0) {
-				start = 0;
-			}
 		}
 		
 		//strの切り出し
 		for(int i = 0;i < str.length();i++) {
 			if(i >= start) {
-				strList.add(strArray[i]);
+				sb.append(strArray[i]);
 			}
 		}
-		return str = String.join("", strList);
+		return str = sb.toString();
 	}
 	
 	//test12
@@ -102,42 +96,32 @@ public class StringUtils {
 		if(str == null) {
 			return null;
 		}
-		
-		if(str == "" || start > end || str.length() + start == end || start == 0 && end == 0) {
-			return "";
-		}
-		
+	
 		//end引数がstr.lengthより大きい場合エラーになるのでエラー回避
 		if(end > str.length()) {
 			end = str.length();
 		}
 		
 		String[] strArray = str.split("");
-		List<String> strList = new ArrayList<String>();
+		StringBuilder sb = new StringBuilder();
 		
 		//start引数が(-)の場合の標準化
 		if(start < 0) {
 			start = str.length() + start;
-			if(start < 0) {
-				start = 0;
-			}
 		}
 		
 		//end引数が(-)の場合の標準化
 		if(end < 0) {
 			end = str.length() + end;
-			if(end < 0) {
-				end = 0;
-			}
 		}
 		
 		//strの切り出し
 		for(int i = 0;i < end;i++) {
 			if(i >= start) {
-				strList.add(strArray[i]);
+				sb.append(strArray[i]);
 			}
 		}
-		return str = String.join("", strList);
+		return str = sb.toString();
 	}
 
 //------------------------------------------------------------------------------------------
