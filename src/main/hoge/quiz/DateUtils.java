@@ -24,7 +24,7 @@ public class DateUtils {
 		if(week == 0 || week > 7 ) {
 			throw new IllegalArgumentException("引数に1-7の数字を指定してください。指定値=" + week);
 		}
-		
+
 		return map.get(week);
 	}
 }
